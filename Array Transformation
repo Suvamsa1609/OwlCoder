@@ -1,0 +1,12 @@
+n = int(input())
+arr = list(map(int,input().split()))
+if n == 1 and arr[0] > 1:
+    print("NO")
+else:
+    ans = 0
+    for i in arr:
+        ans ^= i
+    if ans > 0:
+        print("YES")
+    else:
+        print("NO")
