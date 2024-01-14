@@ -1,0 +1,10 @@
+n = int(input())
+arr = list(map(int,input().split()))
+k = int(input())
+if k not in arr:
+    print(-1,-1)
+else:
+    ans = []
+    ans.append(arr.index(k))
+    ans.append(n-arr[::-1].index(k)-1)
+    print(*ans)
