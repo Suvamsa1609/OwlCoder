@@ -1,0 +1,20 @@
+t = int(input())
+for _ in range(t):
+    xc = []
+    yc = []
+    for i in range(4):
+        x,y = map(int,input().split())
+        xc.append(x)
+        yc.append(y)
+    if xc[0] == xc[1]:
+        print((yc[1]-yc[0])**2)
+    elif xc[0] == xc[2]:
+        print((yc[2]-yc[0])**2)
+    elif xc[0] == xc[3]:
+        print((yc[3]-yc[0])**2)
+    elif xc[1] == xc[2]:
+        print((yc[2]-yc[1])**2)
+    elif xc[1] == xc[3]:
+        print((yc[3]-yc[1])**2)
+    else:
+        print((yc[3]-yc[2])**2)
