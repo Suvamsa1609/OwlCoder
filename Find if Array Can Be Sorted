@@ -1,0 +1,28 @@
+class Solution:
+    def canSortArray(self, nums: List[int]) -> bool:
+        if nums == sorted(nums):
+            return True
+        def setbits(n):
+            c = 0
+            while n > 0:
+                if n & 1:
+                    c += 1
+                n = n >> 1
+            return c
+        res1 = []
+        for i in nums:
+            res1.append(setbits(i))
+        num = sorted(nums)
+        res2 = []
+        for i in num:
+            res2.append(setbits(i))
+        f = 0
+        for i in range(len(res1)-1):
+            if res1[i] != res2[i]:
+                return False
+            elif res1[i] > res1[i+1] and nums[i] > nums[i+1]:
+                f = 1
+                break
+        if f == 1:
+            return False
+        return True
