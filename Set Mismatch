@@ -1,0 +1,17 @@
+class Solution:
+    def findErrorNums(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        s = set(nums)
+        res = []
+        d = {}
+        for i in nums:
+            if i not in d:
+                d[i] = 1
+            else:
+                d[i] += 1
+        for k,v in d.items():
+            if v == 2:
+                res.append(k)
+        k = sum(range(1,n+1))
+        res.append(k-sum(s))
+        return res
