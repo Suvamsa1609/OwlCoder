@@ -1,0 +1,16 @@
+long long  current_sum=arr[0];
+      long long  best_sum=arr[0];
+      for(int i=1;i<n;i++)
+      {
+          if(current_sum>0)
+          {
+             current_sum+=arr[i];
+          }
+          else
+          current_sum=arr[i];
+          if(current_sum>best_sum)
+          {
+              best_sum=current_sum;
+          }
+      }
+      return best_sum;
