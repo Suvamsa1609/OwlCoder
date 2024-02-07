@@ -1,0 +1,18 @@
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        d = {}
+        for i in s:
+            if i not in d:
+                d[i] = 1
+            else:
+                d[i] += 1
+        res = ''
+        k = list(sorted(d.values(),reverse=True))
+        for i in k:
+            for j in set(s):
+                if s.count(j) == i and j not in res:
+                    while i > 0:
+                        res += j
+                        i -= 1
+        return res
+                
