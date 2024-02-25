@@ -1,0 +1,7 @@
+from typing import List
+class Solution:
+    def isMagicArray(self, n : int, arr : List[int]) -> bool:
+        for i in range(n-1):
+            if arr[i]%2 == arr[i+1]%2:
+                return 0
+        return 1
