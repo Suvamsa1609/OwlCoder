@@ -1,0 +1,10 @@
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    s = input()
+    if s[0] < s[-1] or s == s[::-1]:
+        print(s)
+    elif s[0] == s[-1]:
+        print(min(s,s[::-1]+s))
+    else:
+        print(s[::-1]+s)
