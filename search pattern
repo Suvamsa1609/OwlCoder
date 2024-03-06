@@ -1,0 +1,9 @@
+class Solution:
+    def search(self, pattern, text):
+        k = len(pattern)
+        n = len(text)
+        res = []
+        for i in range(n-k+1):
+            if text[i:i+k] == pattern:
+                res.append(i+1)
+        return res
