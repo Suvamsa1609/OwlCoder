@@ -1,0 +1,24 @@
+#User function Template for python3
+class Solution:
+    def sameFreq(self, s):
+        d = {}
+        for i in s:
+            if i not in d:
+                d[i] = 1
+            else:
+                d[i] += 1
+        l = {}
+        for v in d.values():
+            if v not in l:
+                l[v] = 1
+            else:
+                l[v] += 1
+        if len(l) == 1:
+            return True
+        if len(l) == 2:
+            k = list(l.keys())
+            if max(k) - min(k) == 1 and l[max(k)] == 1:
+                return True
+            if l[min(k)] == 1 and min(k) == 1:
+                return True
+        return False 
